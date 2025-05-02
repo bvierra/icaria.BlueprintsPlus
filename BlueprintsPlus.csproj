@@ -87,10 +87,10 @@
   <PropertyGroup>
     <PostBuildEvent>mkdir "D:\Games\Steam\steamapps\common\Icaria\BepInEx\plugins\$(TargetName)"
 echo "Killing Icaria.exe (if running)"
-taskkill /f /t /im Icaria.exe
+START /WAIT taskkill /f /t /im Icaria.exe
 xcopy /q/y/i "$(TargetPath)" "D:\Games\Steam\steamapps\common\Icaria\BepInEx\plugins\$(TargetName)" /E /H /C
 echo "Copied $(TargetName) to plugins directory"
 echo "Starting Icaria..."
-START /WAIT cmd /c "D:\Games\Steam\steamapps\common\Icaria\Icaria.exe"</PostBuildEvent>
+START cmd /c "D:\Games\Steam\steamapps\common\Icaria\Icaria.exe"</PostBuildEvent>
   </PropertyGroup>
 </Project>
